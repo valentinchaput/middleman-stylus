@@ -1,10 +1,127 @@
 ---
-title: Welcome to Middleman
+title: Welcome to Styl.us
 ---
 
-<div class="welcome text-center">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<div id="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="fade-and-slide">
+          <h1>STYL.US</h1>
+          <p>Turn your pen into you best friend</p>
+          <p>Make every line you write count..</p>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">GET YOUR STYLUS
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Get your own stylus right now!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="InputEmail">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+        </div>
+        <label for="Quantity">Quantity</label>
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container -->
+<div class="bg-blue padded">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag "paper.svg" %><!--
+        <img src="images/paper.svg" alt="paper"> -->
+        <h2>Natural writing</h2>
+        <p>
+          Don't change your habits, write with a pen <strong>on paper notebooks</strong>
+        </p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag "computer.svg" %>
+        <h2>Sync. copy</h2>
+        <p>
+          Stylus instantaneously copy your text on your computer, <strong>in real-time</strong>
+        </p>
+      </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag "analytics.svg" %>
+        <h2>Analytics</h2>
+        <p>
+          Get feedbacks on the way you write, <strong>your favorite words, your frequent mistakes</strong>
+        </p>
+      </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag "data.svg" %>
+        <h2>Storing your texts</h2>
+        <p>
+          Everything line writen with your stylus is stored in the cloud, so that <strong>it's never lost</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="padded">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center">
+          <h2>Get news from stylus</h2>
+          <p>Leave us your mail and get stylus news</p>
+          <form action="/" class="form-inline">
+            <input type="email" class="form-control" placeholder="bob@gmail.com">
+            <input type="subscribe" value="Subscribe" class="btn btn-primary" >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Map -->
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script type="text/javascript">
+var myLatlng = new google.maps.LatLng(48.852937,2.364178);
+
+var myOptions = {
+  zoom: 16,
+  center: myLatlng,
+  scrollwheel: false,
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+  styles: [{featureType:"landscape",stylers:[{saturation:-100},{lightness:65},{visibility:"on"}]},{featureType:"poi",stylers:[{saturation:-100},{lightness:51},{visibility:"simplified"}]},{featureType:"road.highway",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"road.arterial",stylers:[{saturation:-100},{lightness:30},{visibility:"on"}]},{featureType:"road.local",stylers:[{saturation:-100},{lightness:40},{visibility:"on"}]},{featureType:"transit",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"administrative.province",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"labels",stylers:[{visibility:"on"},{lightness:-25},{saturation:-100}]},{featureType:"water",elementType:"geometry",stylers:[{hue:"#ffff00"},{lightness:-25},{saturation:-97}]}]
+};
+
+var map = new google.maps.Map(document.getElementById('map'), myOptions);
+var marker = new google.maps.Marker({
+  position: myLatlng,
+  map: map,
+  title: "You are here!"
+});
+</script>
